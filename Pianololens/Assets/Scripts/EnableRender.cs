@@ -19,7 +19,7 @@ public class EnableRender : MonoBehaviour
     {
         foreach (Transform child in gameObject.transform)
         {
-            child.gameObject.GetComponent<MeshRenderer>().enabled = true;
+            child.gameObject.SetActive(true);
         }
     }
 }

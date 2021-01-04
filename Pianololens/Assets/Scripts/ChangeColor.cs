@@ -39,6 +39,6 @@ public class ChangeColor : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         rend.material = default_Material;
-        other.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        other.gameObject.SetActive(false);
     }
 }

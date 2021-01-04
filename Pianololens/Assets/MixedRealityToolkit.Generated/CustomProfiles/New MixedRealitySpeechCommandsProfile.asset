@@ -31,13 +31,6 @@ MonoBehaviour:
       description: Select
       axisConstraint: 2
   - localizationKey: 
-    keyword: Calibrate
-    keyCode: 284
-    action:
-      id: 1
-      description: Select
-      axisConstraint: 2
-  - localizationKey: 
     keyword: Previous
     keyCode: 285
     action:
@@ -68,6 +61,20 @@ MonoBehaviour:
   - localizationKey: 
     keyword: Play
     keyCode: 289
+    action:
+      id: 1
+      description: Select
+      axisConstraint: 2
+  - localizationKey: 
+    keyword: Faster
+    keyCode: 290
+    action:
+      id: 1
+      description: Select
+      axisConstraint: 2
+  - localizationKey: 
+    keyword: Slower
+    keyCode: 291
     action:
       id: 1
       description: Select

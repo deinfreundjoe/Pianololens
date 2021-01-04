@@ -6,7 +6,8 @@ using UnityEngine.Events;
 
 public class Countdown : MonoBehaviour
 {
-    private int countdownTime = 5;
+    private float timeLeft = 5f;
+    private bool EnableCounter = false;
     public UnityEvent countdownZero;
 
 
@@ -20,33 +21,24 @@ public class Countdown : MonoBehaviour
         EventManager.OnCountdownAction -= StartCountDown;
     }
 
-
-
-
     public void StartCountDown()
     {
-        countdownTime = 5;
-        StartCoroutine("StartCountDownNow");
+        EnableCounter = true;
+        timeLeft = 5f;
     }
 
-
-
-    IEnumerator StartCountDownNow()
+    void Update()
     {
-        while (countdownTime > 0)
+        if (EnableCounter)
         {
-            gameObject.GetComponent<TextMeshProUGUI>().text = countdownTime.ToString();
-
-            yield return new WaitForSeconds(1f);
-
-            countdownTime--;
+            timeLeft -= Time.deltaTime;
+            gameObject.GetComponent<TextMeshProUGUI>().text = (timeLeft).ToString("0");
+            if (timeLeft < 0)
+            {
+                EnableCounter = false;
+                countdownZero.Invoke();
+            }
         }
-
-        gameObject.GetComponent<TextMeshProUGUI>().text = "Go!";
-
-        yield return new WaitForSeconds(1f);
-
-        countdownZero.Invoke();
     }
 }
 

@@ -34,6 +34,9 @@ public class EventManager : MonoBehaviour
     public delegate void PrevChapter();
     public static event PrevChapter OnPrevAction;
 
+    public delegate void InitialChapter();
+    public static event InitialChapter OnInitialAction;
+
     public delegate void ChapterEnd();
     public static event ChapterEnd OnChapterEndAction;
 
@@ -119,6 +122,14 @@ public class EventManager : MonoBehaviour
         if (OnPrevAction != null)
         {
             OnPrevAction();
+        }
+    }
+
+    public void OnInitialChapter()
+    {
+        if (OnInitialAction != null)
+        {
+            OnInitialAction();
         }
     }
 

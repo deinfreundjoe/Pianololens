@@ -13,6 +13,7 @@ public class MelodyController : MonoBehaviour
     public GameObject HintCollection;
     public GameObject PianoKeys;
     public GameObject ChapterMenu;
+    public GameObject Speedslider;
 
     private GameObject currentChapter;
     private int currentChapterIndex = 0;
@@ -20,7 +21,7 @@ public class MelodyController : MonoBehaviour
     private int rightIndex = 0;
     private int leftIndex = 1;
 
-    private bool rightHand = false;
+    private bool rightHand = true;
     private bool leftHand = false;
 
 
@@ -34,6 +35,7 @@ public class MelodyController : MonoBehaviour
         EventManager.OnLeftHandAction += ToggleLeftHand;
         EventManager.OnNextAction += NextChapter;
         EventManager.OnPrevAction += PrevChapter;
+        EventManager.OnInitialAction += InitialChapter;
         EventManager.OnChapterEndAction += EnableChapterMenu;
     }
 
@@ -45,6 +47,7 @@ public class MelodyController : MonoBehaviour
         EventManager.OnLeftHandAction -= ToggleLeftHand;
         EventManager.OnNextAction -= NextChapter;
         EventManager.OnPrevAction -= PrevChapter;
+        EventManager.OnInitialAction -= InitialChapter;
         EventManager.OnChapterEndAction -= EnableChapterMenu;
     }
 
@@ -109,6 +112,25 @@ public class MelodyController : MonoBehaviour
         Moving.speed = eventData.NewValue;
     }
 
+    public void IncreaseSpeed()
+    {
+        if (Moving.speed < 1)
+        {
+            Moving.speed = Moving.speed + 0.1f;
+        }
+        Speedslider.GetComponent<PinchSlider>().SliderValue = Moving.speed;
+    }
+
+    public void DecreaseSpeed() { 
+    
+        if(Moving.speed > 0){
+            Moving.speed = Moving.speed - 0.1f;
+        }
+
+        Speedslider.GetComponent<PinchSlider>().SliderValue = Moving.speed;
+    }
+
+
     public void EnableChapterMenu()
     {
 
@@ -132,6 +154,11 @@ public class MelodyController : MonoBehaviour
             currentChapterIndex--;
         }
 
+    }
+
+    public void InitialChapter()
+    {
+        currentChapterIndex = 0;
     }
 
     public void ToggleRightHand()
