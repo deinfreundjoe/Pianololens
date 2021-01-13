@@ -6,6 +6,11 @@ using UnityEngine.Events;
 
 public class Countdown : MonoBehaviour
 {
+
+    /* This is a script for handling the Countdown which is shown right before the hints start to move in.
+     * The Counter is again listening to an event by the EventManager.
+     */
+
     private float timeLeft = 5f;
     private bool EnableCounter = false;
     public UnityEvent countdownZero;
@@ -26,6 +31,9 @@ public class Countdown : MonoBehaviour
         EnableCounter = true;
         timeLeft = 5f;
     }
+
+    // Maybe not the most elegant way to programm this countdown via an Update loop, but I found no real alternative solution. 
+    //Basically it is just decreasing the timeLeft variable over time and displaying its value in as TextMeshPro Object. 
 
     void Update()
     {

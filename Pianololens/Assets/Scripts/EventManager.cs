@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
+
+
+    /* With this project I wanted to take an approach I've never done before. Instead of having public methods which get called from a controller object directly, I wanted to try handling the logic via this EventManager.
+     * Basically this EventManager introduces events for the major functions that happen in the application. These events are mostly invoked by the MRTK Interactable Component which is attached to the buttons.
+     * The MelodyController.cs is listening to these events and is then performing the representative method.
+     * This Eventhandler.cs script is therefore only setting up the event delegates and defining the public methods which will invoke the event as soon as the button was clicked. 
+    */
+
+
+
     public delegate void SetChapter();
     public static event SetChapter OnChapterAction;
 

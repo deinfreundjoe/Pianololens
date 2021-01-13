@@ -18,63 +18,112 @@ MonoBehaviour:
   speechCommands:
   - localizationKey: 
     keyword: Home
-    keyCode: 282
+    keyCode: 0
     action:
       id: 1
       description: Select
       axisConstraint: 2
   - localizationKey: 
     keyword: More
-    keyCode: 283
+    keyCode: 0
     action:
       id: 1
       description: Select
       axisConstraint: 2
   - localizationKey: 
     keyword: Previous
-    keyCode: 285
+    keyCode: 0
     action:
       id: 1
       description: Select
       axisConstraint: 2
   - localizationKey: 
     keyword: Next
-    keyCode: 286
+    keyCode: 0
     action:
       id: 1
       description: Select
       axisConstraint: 2
   - localizationKey: 
     keyword: Restart
-    keyCode: 287
+    keyCode: 0
     action:
       id: 1
       description: Select
       axisConstraint: 2
   - localizationKey: 
     keyword: Pause
-    keyCode: 288
+    keyCode: 0
     action:
       id: 1
       description: Select
       axisConstraint: 2
   - localizationKey: 
     keyword: Play
-    keyCode: 289
+    keyCode: 0
     action:
       id: 1
       description: Select
       axisConstraint: 2
   - localizationKey: 
-    keyword: Faster
-    keyCode: 290
+    keyword: Last Played
+    keyCode: 0
     action:
       id: 1
       description: Select
       axisConstraint: 2
   - localizationKey: 
-    keyword: Slower
-    keyCode: 291
+    keyword: Exercise
+    keyCode: 0
+    action:
+      id: 1
+      description: Select
+      axisConstraint: 2
+  - localizationKey: 
+    keyword: Profile
+    keyCode: 0
+    action:
+      id: 1
+      description: Select
+      axisConstraint: 2
+  - localizationKey: 
+    keyword: Store
+    keyCode: 0
+    action:
+      id: 1
+      description: Select
+      axisConstraint: 2
+  - localizationKey: 
+    keyword: Back
+    keyCode: 0
+    action:
+      id: 0
+      description: Select
+      axisConstraint: 2
+  - localizationKey: 
+    keyword: Test Melody
+    keyCode: 0
+    action:
+      id: 1
+      description: Select
+      axisConstraint: 2
+  - localizationKey: 
+    keyword: Beginner
+    keyCode: 0
+    action:
+      id: 1
+      description: Select
+      axisConstraint: 2
+  - localizationKey: 
+    keyword: Set Position
+    keyCode: 0
+    action:
+      id: 1
+      description: Select
+      axisConstraint: 2
+  - localizationKey: 
+    keyword: Reset Position
+    keyCode: 0
     action:
       id: 1
       description: Select
